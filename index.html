@@ -54,7 +54,7 @@
     border-bottom:1px solid var(--line);
   }
   nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
-  .brand{font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem; color:var(--forest-dark); text-decoration:none;}
+  .brand{font-family:'Fraunces',serif; font-weight:700; font-size:1.2rem; color:var(--forest-dark); text-decoration:none;}
   .navlinks{display:flex; gap:28px; font-size:.95rem;}
   .navlinks a{text-decoration:none; color:var(--ink); opacity:.8;}
   .navlinks a:hover{opacity:1; color:var(--forest-dark);}
@@ -76,16 +76,17 @@
     align-items:center;
   }
   .eyebrow{
-    font-size:.82rem; letter-spacing:.02em; color:var(--moss);
-    margin-bottom:14px; font-weight:500;
+    font-size:.88rem; letter-spacing:.02em; color:var(--moss);
+    margin-bottom:16px; font-weight:600;
   }
   .hero h1{
-    font-size:2.55rem;
-    letter-spacing:-0.01em;
+    font-size:3.35rem;
+    font-weight:600;
+    letter-spacing:-0.015em;
   }
   .hero .lede{
-    font-size:1.12rem;
-    max-width:36ch;
+    font-size:1.2rem;
+    max-width:42ch;
     color:#33443A;
   }
   .hero-cta{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
@@ -121,13 +122,13 @@
 
   /* ---------- Section shell ---------- */
   section{padding:68px 0;}
-  section h2{font-size:1.9rem; margin-bottom:.3em;}
+  section h2{font-size:2.4rem; font-weight:600; letter-spacing:-0.01em; margin-bottom:.35em;}
   .section-intro{max-width:56ch; color:#33443A; margin-bottom:38px;}
   .divider{
     display:flex; align-items:center; gap:10px; margin-bottom:10px;
   }
   .divider svg{flex-shrink:0;}
-  .divider .label{font-size:.85rem; color:var(--moss); font-weight:500;}
+  .divider .label{font-size:.9rem; color:var(--moss); font-weight:600; letter-spacing:.01em;}
 
   section.alt{background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 
@@ -170,7 +171,7 @@
   }
   .card-media img{width:100%; height:100%; object-fit:cover;}
   .card-body{padding:22px 24px 24px;}
-  .card h3{font-size:1.18rem; margin-bottom:.4em;}
+  .card h3{font-size:1.3rem; font-weight:600; margin-bottom:.4em;}
   .card .badges{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;}
   .card .badges span{
     font-size:.72rem; padding:3px 9px; border:1px solid var(--line); border-radius:2px; color:var(--slate);
@@ -212,7 +213,7 @@
     .navlinks{position:absolute; top:64px; left:0; right:0; background:var(--paper); flex-direction:column; padding:16px 28px; border-bottom:1px solid var(--line); display:none;}
     .navlinks.open{display:flex;}
     .navtoggle{display:block;}
-    .hero h1{font-size:2rem;}
+    .hero h1{font-size:2.3rem;}
   }
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
 </style>
@@ -244,12 +245,7 @@
         <a class="btn btn-ghost" href="https://github.com/danielmg-data" target="_blank">GitHub</a>
       </div>
     </div>
-    <div class="hero-photo-wrap">
-      <div class="hero-photo-frame">
-        <img src="assets/foto.jpg" alt="Foto de Daniel Medina Guzmán" width="800" height="1000">
-      </div>
-      <div class="photo-caption">Arequipa, Perú</div>
-    </div>
+    <div class="hero-photo-wrap" aria-hidden="true"></div>
   </div>
 </header>
 
