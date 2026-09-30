@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Medina Guzmán | Biólogo y Analista de Datos</title>
+<meta name="description" content="Portafolio de Daniel Medina Guzmán, analista de datos con formación en Biología. Python, SQL y Power BI aplicados a negocio y ambiente.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F1E6;
+    --paper-alt:#ECE8DA;
+    --ink:#1D2A22;
+    --forest:#1F5C3A;
+    --forest-dark:#153F27;
+    --moss:#6B8F71;
+    --ochre:#A97327;
+    --slate:#4A5A68;
+    --card:#FFFFFF;
+    --line: rgba(29,42,34,0.14);
+    --maxw: 1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0 0 .5em;
+    color:var(--forest-dark);
+  }
+  p{margin:0 0 1em;}
+  a{color:var(--forest-dark);}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(243,241,230,0.92);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .brand{font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem; color:var(--forest-dark); text-decoration:none;}
+  .navlinks{display:flex; gap:28px; font-size:.95rem;}
+  .navlinks a{text-decoration:none; color:var(--ink); opacity:.8;}
+  .navlinks a:hover{opacity:1; color:var(--forest-dark);}
+  .navtoggle{display:none; background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--forest-dark);}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    position:relative;
+    padding:76px 0 64px;
+    background-image:
+      linear-gradient(var(--paper), var(--paper)),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 27px, var(--line) 28px);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-size:.82rem; letter-spacing:.02em; color:var(--moss);
+    margin-bottom:14px; font-weight:500;
+  }
+  .hero h1{
+    font-size:2.55rem;
+    letter-spacing:-0.01em;
+  }
+  .hero .lede{
+    font-size:1.12rem;
+    max-width:36ch;
+    color:#33443A;
+  }
+  .hero-cta{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px;
+    border-radius:3px;
+    font-size:.95rem; font-weight:500;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn-primary{background:var(--forest-dark); color:var(--paper);}
+  .btn-primary:hover{background:var(--forest);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--forest-dark); color:var(--forest-dark);}
+
+  .hero-photo-wrap{
+    position:relative;
+    justify-self:end;
+  }
+  .hero-photo-frame{
+    width:280px;
+    border:1px solid var(--ink);
+    padding:10px;
+    background:var(--card);
+    box-shadow: 8px 8px 0 var(--ochre);
+  }
+  .hero-photo-frame img{width:100%; display:block; filter:saturate(0.94);}
+  .photo-caption{
+    margin-top:14px; font-size:.8rem; color:var(--slate); text-align:center;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:68px 0;}
+  section h2{font-size:1.9rem; margin-bottom:.3em;}
+  .section-intro{max-width:56ch; color:#33443A; margin-bottom:38px;}
+  .divider{
+    display:flex; align-items:center; gap:10px; margin-bottom:10px;
+  }
+  .divider svg{flex-shrink:0;}
+  .divider .label{font-size:.85rem; color:var(--moss); font-weight:500;}
+
+  section.alt{background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid; grid-template-columns: 1.4fr 1fr; gap:48px;}
+  .about-text p{max-width:62ch;}
+  .aporto{list-style:none; margin:0; padding:0; border-left:2px solid var(--forest); padding-left:20px;}
+  .aporto li{margin-bottom:18px;}
+  .aporto .k{display:block; font-weight:600; color:var(--forest-dark); margin-bottom:2px;}
+
+  /* ---------- Stack ---------- */
+  .stack-row{display:flex; flex-wrap:wrap; gap:10px;}
+  .badge{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:.82rem; font-weight:500;
+    padding:7px 14px;
+    border:1px solid var(--ink);
+    border-radius:3px;
+    color:var(--ink);
+    background:var(--card);
+  }
+
+  /* ---------- Projects ---------- */
+  .projects-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-top:4px solid var(--accent, var(--forest));
+    display:flex; flex-direction:column;
+  }
+  .card-media{
+    aspect-ratio: 16/9;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+    background:#F8F6EF;
+  }
+  .card-media img{width:100%; height:100%; object-fit:cover;}
+  .card-body{padding:22px 24px 24px;}
+  .card h3{font-size:1.18rem; margin-bottom:.4em;}
+  .card .badges{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;}
+  .card .badges span{
+    font-size:.72rem; padding:3px 9px; border:1px solid var(--line); border-radius:2px; color:var(--slate);
+  }
+  .card p{font-size:.95rem; color:#33443A;}
+  .card ul{margin:0 0 14px; padding-left:1.1em; font-size:.92rem; color:#33443A;}
+  .card ul li{margin-bottom:6px;}
+  .card .repo-link{font-size:.88rem; font-weight:600; text-decoration:none; color:var(--forest-dark);}
+  .card .repo-link:hover{text-decoration:underline;}
+
+  /* ---------- Closing CTA ---------- */
+  .cta-final{
+    text-align:left;
+    background:var(--forest-dark);
+    color:var(--paper);
+    padding:64px 0;
+  }
+  .cta-final h2{color:var(--paper);}
+  .cta-final .section-intro{color:#CFE0D2; max-width:60ch;}
+  .cta-final .hero-cta .btn-ghost{border-color:var(--paper); color:var(--paper);}
+  .cta-final .hero-cta .btn-ghost:hover{background:rgba(255,255,255,.08);}
+  .cta-final .btn-primary{background:var(--ochre); color:var(--ink);}
+  .cta-final .btn-primary:hover{background:#BE8434;}
+
+  footer{
+    padding:26px 0;
+    font-size:.82rem;
+    color:var(--slate);
+    border-top:1px solid var(--line);
+  }
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+
+  @media (max-width: 800px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo-wrap{justify-self:start;}
+    .hero-photo-frame{width:200px;}
+    .about-grid{grid-template-columns:1fr;}
+    .projects-grid{grid-template-columns:1fr;}
+    .navlinks{position:absolute; top:64px; left:0; right:0; background:var(--paper); flex-direction:column; padding:16px 28px; border-bottom:1px solid var(--line); display:none;}
+    .navlinks.open{display:flex;}
+    .navtoggle{display:block;}
+    .hero h1{font-size:2rem;}
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Daniel Medina Guzmán</a>
+    <button class="navtoggle" aria-label="Abrir menú" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+    <div class="navlinks">
+      <a href="#about">Sobre mí</a>
+      <a href="#stack">Herramientas</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Analista de Datos · Biólogo e investigador</div>
+      <h1>De contar especies en la Amazonía a contar lo que los datos realmente dicen.</h1>
+      <p class="lede">Formación en Biología, más de siete años como consultor e investigador de campo, y hoy SQL, Python y Power BI para responder preguntas de negocio y de ambiente con el mismo rigor.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">Ver proyectos</a>
+        <a class="btn btn-ghost" href="assets/Daniel_Medina_Guzman_CV.pdf" target="_blank">Descargar CV</a>
+        <a class="btn btn-ghost" href="https://github.com/danielmg-data" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="assets/foto.jpg" alt="Foto de Daniel Medina Guzmán" width="800" height="1000">
+      </div>
+      <div class="photo-caption">Arequipa, Perú</div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B8F71" stroke-width="1.6"><path d="M4 20c6-1 9-6 9-14 0 8 3 13 9 14"/></svg>
+      <span class="label">Sobre mí</span>
+    </div>
+    <h2>Del herbario al dashboard</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Antes de limpiar datos en Python, limpiaba y ordenaba muestras botánicas en el Herbarium Areqvipense de la Universidad Nacional de San Agustín. Entre 2003 y 2010 trabajé como consultor e investigador en botánica y estudios de línea base ambiental: coordiné, como investigador principal, el Proyecto Botánico de la Reserva Ecológica Taricaya para Projects Abroad, y colaboré con Knight Piésold, Vector S.A.C. y el World Wildlife Fund. Más tarde dirigí la parte académica de dos instituciones educativas en Arequipa.</p>
+        <p>Hoy combino ese rigor de campo con SQL, Python y Power BI para responder preguntas de negocio y de sostenibilidad con datos. Me certifiqué como analista en TripleTen, y sigo practicando: mi proyecto más reciente reanaliza los datos de mi propia investigación en la Amazonía, publicados con sus resultados reales y sus límites.</p>
+      </div>
+      <ul class="aporto">
+        <li><span class="k">Rigor de campo aplicado a datos</span>Valido la calidad del dato antes de sacar cualquier conclusión, igual que en un muestreo biológico.</li>
+        <li><span class="k">Honestidad estadística</span>Distingo un hallazgo real de un patrón que no alcanza para decidir.</li>
+        <li><span class="k">Comunicación clara</span>Traduzco resultados técnicos en decisiones que un equipo puede usar.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="stack">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B8F71" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      <span class="label">Herramientas</span>
+    </div>
+    <h2>Caja de herramientas</h2>
+    <p class="section-intro">Lo que uso a diario para limpiar, analizar y comunicar datos.</p>
+    <div class="stack-row">
+      <span class="badge">Python</span>
+      <span class="badge">SQL</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">Tableau</span>
+      <span class="badge">Excel avanzado</span>
+      <span class="badge">Google Sheets</span>
+      <span class="badge">Jupyter</span>
+      <span class="badge">GitHub</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B8F71" stroke-width="1.6"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>
+      <span class="label">Proyectos</span>
+    </div>
+    <h2>Proyectos</h2>
+    <p class="section-intro">Cada repositorio documenta objetivo, metodología, resultados y limitaciones — no solo el código.</p>
+
+    <div class="projects-grid">
+
+      <div class="card" style="--accent:#1F5C3A">
+        <div class="card-media"><img src="assets/taricaya.png" alt="Gráfico de fenología reproductiva y precipitación, Reserva Taricaya 2009"></div>
+        <div class="card-body">
+          <h3>Fenología reproductiva y precipitación (Reserva Taricaya)</h3>
+          <div class="badges"><span>Python</span><span>SQL</span><span>Power BI</span><span>Jupyter</span></div>
+          <p>Reanálisis de datos de campo de un proyecto botánico que coordiné en la Amazonía peruana (2008–2009).</p>
+          <ul>
+            <li>El pico de floración coincide con el mes más lluvioso, pero con 12 meses de datos la relación no es estadísticamente significativa (ρ = 0.20, p = 0.54).</li>
+            <li>Corrección de Holm por comparaciones múltiples y dashboard en Power BI con el detalle por especie.</li>
+          </ul>
+          <a class="repo-link" href="https://github.com/danielmg-data/taricaya-fenologia-precipitacion" target="_blank">Ver repositorio →</a>
+        </div>
+      </div>
+
+      <div class="card" style="--accent:#A97327">
+        <div class="card-media" style="display:flex;align-items:center;justify-content:center;">
+          <svg width="88%" height="72%" viewBox="0 0 200 100"><polyline points="0,80 30,55 60,60 90,30 120,40 150,15 180,25" fill="none" stroke="#A97327" stroke-width="3"/><line x1="0" y1="95" x2="200" y2="95" stroke="#D8D2BF" stroke-width="1"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Rentabilidad financiera por país con SQL</h3>
+          <div class="badges"><span>SQL</span><span>PostgreSQL</span><span>KPIs</span></div>
+          <p>Ingresos, costos, margen y ROI de campañas por país (AdventureWorks).</p>
+          <ul>
+            <li>El margen es parecido entre países (42%–45%), pero el ROI va de 17% a 76%.</li>
+            <li>El ROI sigue el tamaño del mercado, no la eficiencia de la campaña — documenté por qué ese ROI no es neto.</li>
+          </ul>
+          <a class="repo-link" href="https://github.com/danielmg-data/rentabilidad-financiera-sql-adventureworks" target="_blank">Ver repositorio →</a>
+        </div>
+      </div>
+
+      <div class="card" style="--accent:#6B8F71">
+        <div class="card-media" style="display:flex;align-items:center;justify-content:center;">
+          <svg width="88%" height="72%" viewBox="0 0 200 100"><circle cx="60" cy="50" r="30" fill="none" stroke="#6B8F71" stroke-width="3"/><circle cx="140" cy="50" r="14" fill="none" stroke="#6B8F71" stroke-width="3"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Movilidad urbana y productividad económica</h3>
+          <div class="badges"><span>Python</span><span>Pandas</span><span>Seaborn</span></div>
+          <p>Tráfico (TomTom) y economía urbana (OECD) de 15 ciudades latinoamericanas.</p>
+          <ul>
+            <li>No encontré una relación clara entre congestión y PIB per cápita.</li>
+            <li>El desempleo fue la variable más asociada al PIB; lo documenté en vez de forzar la hipótesis inicial.</li>
+          </ul>
+          <a class="repo-link" href="https://github.com/danielmg-data/movilidad-urbana-productividad-latam" target="_blank">Ver repositorio →</a>
+        </div>
+      </div>
+
+      <div class="card" style="--accent:#4A5A68">
+        <div class="card-media" style="display:flex;align-items:center;justify-content:center;">
+          <svg width="88%" height="72%" viewBox="0 0 200 100"><rect x="20" y="40" width="20" height="40" fill="#4A5A68"/><rect x="55" y="20" width="20" height="60" fill="#4A5A68"/><rect x="90" y="55" width="20" height="25" fill="#4A5A68"/><rect x="125" y="10" width="20" height="70" fill="#4A5A68"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Eficiencia de ventas por departamento (Walmart)</h3>
+          <div class="badges"><span>Excel</span><span>Google Sheets</span><span>XLOOKUP</span></div>
+          <p>Casi 96,000 registros de ventas semanales consolidados en un dashboard interactivo.</p>
+          <ul>
+            <li>Tres departamentos concentran el 36.4% de las ventas de 2012.</li>
+            <li>El KPI de ventas por m² no permite juzgar el aprovechamiento real del espacio.</li>
+          </ul>
+          <a class="repo-link" href="https://github.com/danielmg-data/eficiencia-ventas-walmart-excel" target="_blank">Ver repositorio →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="contact">
+  <div class="wrap">
+    <div class="divider">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#CFE0D2" stroke-width="1.6"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+      <span class="label" style="color:#CFE0D2;">Contacto</span>
+    </div>
+    <h2>¿Conversamos?</h2>
+    <p class="section-intro">Busco un puesto remoto como analista de datos, idealmente en ambiente, agricultura, investigación o educación — aunque estoy abierto a cualquier sector donde el método y la claridad hagan diferencia.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="assets/Daniel_Medina_Guzman_CV.pdf" target="_blank">Descargar CV</a>
+      <a class="btn btn-ghost" href="mailto:medinaguzman.da@gmail.com">Escríbeme</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/danielmg-data" target="_blank">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/danielmg-data" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Daniel Medina Guzmán.</span>
+    <span>Hosted on GitHub Pages.</span>
+  </div>
+</footer>
+
+</body>
+</html>
