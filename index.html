@@ -129,8 +129,9 @@
     padding:10px;
     background:var(--card);
     box-shadow: 8px 8px 0 var(--ochre);
+    border-radius:14px;
   }
-  .hero-photo-frame img{width:100%; display:block; filter:saturate(0.94);}
+  .hero-photo-frame img{width:100%; height:auto; display:block; border-radius:8px; filter:saturate(0.94);}
   .photo-caption{
     margin-top:14px; font-size:.8rem; color:var(--slate); text-align:center;
   }
@@ -260,7 +261,11 @@
         <a class="btn btn-ghost" href="https://github.com/danielmg-data" target="_blank">GitHub</a>
       </div>
     </div>
-    <div class="hero-photo-wrap" aria-hidden="true"></div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="assets/foto-perfil.jpg" alt="Retrato de Daniel Medina Guzmán" width="800" height="1000" loading="eager">
+      </div>
+    </div>
   </div>
 </header>
 
